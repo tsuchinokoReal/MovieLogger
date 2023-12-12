@@ -38,6 +38,7 @@ mongoose.connect('mongodb+srv://prettir:kaiwhite@cluster0.wuhslnx.mongodb.net/?r
 const movieSchema = new mongoose.Schema({
   title: String,
   director: String,
+  rating: Number
 });
 
 const Movie = mongoose.model('Movie', movieSchema);
@@ -45,13 +46,13 @@ const Movie = mongoose.model('Movie', movieSchema);
 // Create
 app.post('/api/log-movie', async (req, res) => {
   try {
-    const { title, director } = req.body;
+    const { title, director, rating } = req.body;
 
     if (!title || !director) {
       return res.status(400).json({ error: 'Title and director are required.' });
     }
 
-    const newMovie = new Movie({ title, director });
+    const newMovie = new Movie({ title, director, rating });
     await newMovie.save();
 
     res.status(201).json(newMovie);
@@ -75,8 +76,8 @@ app.get('/api/movies', async (req, res) => {
 // Update
 app.put('/api/movies/:id', async (req, res) => {
   try {
-    const { title, director } = req.body;
-    const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, { title, director }, { new: true });
+    const { title, director, rating } = req.body;
+    const updatedMovie = await Movie.findByIdAndUpdate(req.params.id, { title, director, rating }, { new: true });
     res.json(updatedMovie);
   } catch (error) {
     console.error(error);
