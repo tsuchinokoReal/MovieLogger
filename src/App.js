@@ -55,25 +55,31 @@ function App() {
 
   return (
     <div>
-      <h1>Movie Logger App</h1>
+      <h1>MovieLogger</h1>
 
       <form onSubmit={handleAddMovie}>
-        <label>
-          Title:
-          <input type="text" name="title" value={formData.title} onChange={handleInputChange} required />
+      <div className="input-container">
+        <label className = "label">
+            Title: 
+            <input className="input-field" type="text" name="title" value={formData.title} onChange={handleInputChange} required />
         </label>
+        </div>
         <br/>
-        <label>
-          Director:
-          <input type="text" name="director" value={formData.director} onChange={handleInputChange} required />
+        <div className="input-container">
+        <label className = "label">
+          Director: 
+          <input className="input-field" type="text" name="director" value={formData.director} onChange={handleInputChange} required />
         </label>
+        </div>
         <br/>
-        <label>
-          Rating:
-          <input type="text" name="rating" value={formData.rating} onChange={handleInputChange} required />
+        <div className="input-container">
+        <label className = "label">
+          Rating: 
+          <input className="input-field" type="number" name="rating" value={formData.rating} onChange={handleInputChange} required />
         </label>
+        </div>
         <br/>
-        <button type="submit">Add Movie</button>
+        <button className="submit-button" type="submit">Add Movie</button>
       </form>
 
       <ul>

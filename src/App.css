@@ -54,3 +54,47 @@ li {
   cursor: pointer;
   border-radius: 5px;
 }
+
+.input-container {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  textarea {background-color: 31304D;}
+}
+
+input[type=text] {
+  background-color: #31304D;
+  color: white;
+}
+input[type=number] {
+  background-color: #31304D;
+  color: white;
+}
+
+.submit-button {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
